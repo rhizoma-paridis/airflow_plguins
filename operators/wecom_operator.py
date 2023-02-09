@@ -40,6 +40,7 @@ class WecomOperator(BaseOperator):
 
 def failure_callback_wecom(context):
     message = f"""## DAG: {context['task_instance'].dag_id}
+    OWNER: {context['dag'].owner}
     TASKS: {context['task_instance'].task_id}
     Exception:
     ```python
